@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown 在线编辑器</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">Markdown Editor</p>
+          <h1>Markdown 在线编辑器</h1>
+          <p class="subtitle">左侧输入源码，右侧实时预览，支持导出 Markdown 与内置代码高亮兜底。</p>
+        </div>
+        <div class="toolbar">
+          <span id="saveState" class="toolbar-status" aria-live="polite">草稿自动保存在本地</span>
+          <button id="saveButton" class="primary-action" type="button">保存为 .md</button>
+          <button id="sampleButton" type="button">载入示例</button>
+          <button id="clearButton" type="button">清空内容</button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="panel editor-panel">
+          <div class="panel-header">
+            <h2>Markdown 源码</h2>
+            <span id="sourceMeta">0 字符</span>
+          </div>
+          <label class="sr-only" for="markdownInput">Markdown 输入框</label>
+          <textarea
+            id="markdownInput"
+            spellcheck="false"
+            placeholder="在这里输入 Markdown 内容..."
+          ></textarea>
+        </section>
+
+        <section class="panel preview-panel">
+          <div class="panel-header">
+            <h2>实时预览</h2>
+            <span id="renderState">准备就绪</span>
+          </div>
+          <div id="preview" class="preview"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./vendor/marked.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
