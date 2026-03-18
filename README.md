@@ -22,6 +22,7 @@ markdown-editor/
 ├── app.py
 ├── build_exe.ps1
 ├── index.html
+├── prepare_pages.py
 ├── requirements-build.txt
 ├── script.js
 ├── styles.css
@@ -40,6 +41,10 @@ python .\app.py
 ```
 
 该命令会把网页资源同步到 `%LOCALAPPDATA%\MarkdownEditor`，然后自动用默认浏览器打开编辑器页面。
+
+## GitHub Pages 发布
+
+仓库中的 GitHub Actions 会先运行 `prepare_pages.py`，创建临时的 `pages-artifact/` 发布目录，并把 `index.html`、`script.js`、`styles.css` 与 `vendor/` 复制进去后再上传到 GitHub Pages。
 
 ## 打包为 EXE
 

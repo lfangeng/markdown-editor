@@ -6,7 +6,12 @@ on:
       - master
     paths:
       - ".github/workflows/deploy-pages.yml"
-      - "markdown-editor/**"
+      - "app.py"
+      - "prepare_pages.py"
+      - "index.html"
+      - "script.js"
+      - "styles.css"
+      - "vendor/**"
   workflow_dispatch:
 
 permissions:
@@ -25,13 +30,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
+      - name: Prepare Pages artifact
+        run: python ./prepare_pages.py --output-dir pages-artifact
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./markdown-editor
+          path: ./pages-artifact
 
   deploy:
     needs: build
