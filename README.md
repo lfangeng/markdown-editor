@@ -4,7 +4,7 @@
 
 在线版本（GitHub Pages）：
 
-`https://lf739079854-design.github.io/markdown-editor/`
+`https://lfangeng.github.io/markdown-editor/`
 
 ## 功能特性
 
