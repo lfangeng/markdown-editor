@@ -2,6 +2,10 @@
 
 一个可离线运行的 Markdown 在线编辑器，支持实时预览、自动保存本地草稿、导出 `.md` 文件，以及在高亮库不可用时启用内置代码高亮兜底。
 
+在线版本（GitHub Pages）：
+
+`https://lf739079854-design.github.io/markdown-editor/`
+
 ## 功能特性
 
 - 左右分栏的 Markdown 编辑与实时预览
